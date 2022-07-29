@@ -10,6 +10,7 @@ def load(filepath):
     except FileNotFoundError as e:
         print(f"File not found {e}")
 
+
 def main():
 
     parser = argparse.ArgumentParser(
@@ -27,8 +28,11 @@ def main():
         "filepath",
         type=str,
         help="file path to load from",
+        default=None
     )
     args = parser.parse_args()
+
+
     globals()[args.subcommand](args.filepath)
 
 
